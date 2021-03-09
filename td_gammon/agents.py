@@ -6,7 +6,7 @@ from random import randint, choice
 import numpy as np
 from gym_backgammon.envs.backgammon import WHITE, BLACK, COLORS
 
-random.seed(0)
+#random.seed(0)
 
 
 # AGENT ============================================================================================
@@ -48,13 +48,42 @@ class HumanAgent(Agent):
         pass
 
 
-# TD-GAMMON AGENT =====================================================================================
+# VANILLA AGENT =====================================================================================
+
+class VanillaAgent(Agent):
+    def __init__(self, color):
+        super().__init__(color)
+        self.name = 'VanillaAgent({})'.format(COLORS[color])
+
+    def occupied_point(self, observation, point):
+        white = observation[4*point]
+        black = observation[98+4*point]
+        if self.color == WHITE:
+            return black
+        if self.color == BLACK:
+            return white
+
+    def choose_best_action(self, actions, env):
+        if actions:
+            values = [0]*len(actions)
+            for i, action in enumerate(actions):
+                if len(action)==2:
+                    if  action[0][1] == action[1][1]: #possibility to make a point
+                        values[i]+=1
+                    if self.occupied_point(env.step(None)[0], action[0][1])>0 \
+                        or self.occupied_point(env.step(None)[0], action[1][1])>0: #hit the opponent
+                        values[i]+=1
+        return list(actions)[np.argmax(values)] if actions else None
+
+
+
+# TD-GAMMON AGENT ===================================================================================
 
 
 class TDAgent(Agent):
     def __init__(self, color, net):
         super().__init__(color)
-        self.net = net
+        self.net = net.to(device)
         self.name = 'TDAgent({})'.format(COLORS[color])
 
     def choose_best_action(self, actions, env):
