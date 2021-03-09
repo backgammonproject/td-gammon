@@ -1,7 +1,7 @@
 import os
 import gym
 import sys
-from agents import TDAgent, HumanAgent, TDAgentGNU, RandomAgent, evaluate_agents
+from agents import TDAgent, HumanAgent, TDAgentGNU, RandomAgent, VanillaAgent, evaluate_agents
 from gnubg.gnubg_backgammon import GnubgInterface, GnubgEnv, evaluate_vs_gnubg
 from gym_backgammon.envs.backgammon import WHITE, BLACK
 from model import TDGammon, TDGammonCNN
@@ -213,7 +213,7 @@ def args_plot(args, parser):
 
                     if 'random' in opponents:
                         tag_scalar_dict = {}
-                        agents = {WHITE: TDAgent(WHITE, net=net), BLACK: RandomAgent(BLACK)}
+                        agents = {WHITE: TDAgent(WHITE, net=net), BLACK: VanillaAgent(BLACK)}
                         wins = evaluate_agents(agents, env, n_episodes)
 
                         tag_scalar_dict['random'] = wins[WHITE]
