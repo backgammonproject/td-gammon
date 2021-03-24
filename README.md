@@ -85,7 +85,7 @@ Run `python /path/to/main.py train --help` for a list of parameters available fo
 
 --- 
 ### <a name="evaluate"></a>Evaluate Agent(s)
-To evaluate an already trained models, you have to options: evaluate models to play against each other or evaluate one model against `gnubg`.  
+To evaluate an already trained models, you have to options: evaluate models to play against each other or evaluate one model against a basic agent.  
 Run `python /path/to/main.py evaluate --help` for a list of parameters available for evaluation.
 
 
