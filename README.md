@@ -160,4 +160,4 @@ For a detailed description of the environment: [`gym-backgammon`](https://github
 
 ---
 ## <a name="license"></a>License
-[MIT](https://github.com/dellalibera/td-gammon/blob/master/LICENSE) 
+[MIT](https://github.com/dellalibera/td-gammon/blob/master/LICENSE)  
