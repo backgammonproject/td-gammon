@@ -6,6 +6,7 @@
 
 ---
 # Table of Contents
+- [Introduction](#Introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [How to interact with GNU Backgammon using Python Script?](#howto)
@@ -18,6 +19,13 @@
 - [Bibliography, sources of inspiration, related works](#biblio)
 - [License](#license)
 ---
+## <a name="Introduction"></a>Introduction
+This repository was forked from https://github.com/dellalibera/td-gammon. We modified several elements :
+- the "random" opponent in the plot function is not random but a basic agent that we implemented
+- the structure of the neural network in the model.py file has been modified to include more layers
+
+---
+
 ## <a name="features"></a>Features
 - PyTorch implementation of TD-Gammon [1].
 - Test the trained agents against an open source implementation of the Backgammon game, [GNU Backgammon](https://www.gnu.org/software/gnubg/).
