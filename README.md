@@ -9,7 +9,6 @@
 - [Introduction](#Introduction)
 - [Features](#features)
 - [Installation](#installation)
-- [How to interact with GNU Backgammon using Python Script?](#howto)
 - [Usage](#usage)
     - [Train TD-Network](#train)
     - [Evaluate Agent(s)](#evaluate)
@@ -28,7 +27,7 @@ This repository was forked from https://github.com/dellalibera/td-gammon. We mod
 
 ## <a name="features"></a>Features
 - PyTorch implementation of TD-Gammon [1].
-- Test the trained agents against an open source implementation of the Backgammon game, [GNU Backgammon](https://www.gnu.org/software/gnubg/).
+- Test the trained agent against a basic agent
 - Play against a trained agent via web gui
 
 ---
